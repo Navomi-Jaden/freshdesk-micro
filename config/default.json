@@ -1,0 +1,32 @@
+{
+  "host": "localhost",
+  "port": 3033,
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "authentication": {
+    "secret": "be12ba88db7798972716c3a22aa8693e262ef0f481927eac37ac1c58b5d80f5b9ea6dc64683369f02c6214a78376ad85424546713e1b54ff6f1a7a3a99ccf38ff076386fa6a3c0afca2ec1c9cd7ee67e4e6bc540e86aa0f6e88210abb3c92a9899313baaa5fe30a2d66a88c6f072ca3767a61a446ca31802436760a6167e07b89d1f75328b2cec328708dd820adf1525e198447a53750ee47b6205ae7684f164dd440b5e67be39a94cb61924a9c82d5b8edda999c0c9c54ff9e5f2caeb5bf4dc66f131acab6e3bfe48b14d499aebfe1e8c76c231793c0cf9e105fc8e0070181906e9b40038cee4b6dbfce17a06970236ea64b75e27c14afe45095ee675a4ebca",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "type": "access"
+      },
+      "audience": "https://freshdesk.navomi.com",
+      "subject": "anonymous",
+      "issuer": "navomi",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "username",
+      "passwordField": "password"
+    }
+  }
+}
